@@ -1,0 +1,4 @@
+.terraform/
+database/
+smb.txt
+wordpress/

@@ -3,9 +3,9 @@
 # In this file we will download all images that we will use.
 
 resource "docker_image" "wordpress" {
-  name = "wordpress:latest"
+  name = var.dockerimages["wordpress"]
 }
 
 resource "docker_image" "database" {
-  name = "mysql:5.7"
+  name = var.dockerimages["mysql"]
 }

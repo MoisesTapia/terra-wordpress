@@ -1,11 +1,11 @@
 # Terra-Wordpress
 
-## Deploy a Wordpress with MYSQL with docker an terraform
+## Deploy a Wordpress with MYSQL with docker and terraform
 
 ### Info
 
-No. containers: 2
-Terraform version: Terraform v0.12.24
+No. containers: 2 <br>
+Terraform version: v0.12.24 <br>
 Docker version: 19.03.13, build 4484c46d9d
 
 ## How to deploy
