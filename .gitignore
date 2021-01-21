@@ -2,3 +2,6 @@
 database/
 smb.txt
 wordpress/
+terraform.tfstate.backup
+terraform.tfstate
+
