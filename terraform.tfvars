@@ -1,7 +1,8 @@
 especialpass    = "_%@"
 containernames  = [
     "wordpress",
-    "dbcms"
+    "dbcms",
+    "portainer"
 ]
 containerestpol = [
     "no",
@@ -13,6 +14,7 @@ containerestpol = [
 dockerimages    = {
     wordpress   = "wordpress:latest"
     mysql       = "mysql:5.7"
+    portainer   = "portainer/portainer-ce"
 }
 internal_ports  = [80,3306]
 external_ports  = [8080,3306]

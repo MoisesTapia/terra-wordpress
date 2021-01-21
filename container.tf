@@ -1,5 +1,5 @@
 resource "docker_container" "wordpress" {
-    name  = "wordpress"
+    name  = var.containernames[0]
     restart = var.containerestpol[3]
     image = docker_image.wordpress.latest
     networks_advanced {
@@ -11,12 +11,12 @@ resource "docker_container" "wordpress" {
     }
     volumes {
         container_path = "/var/www/html"
-        host_path = "/home/moisestapia/EMS/Terraform/terra-cert-docker/terra-wordpress/wordpress"
+        host_path = "${path.cwd}/wordpress"
     }
 }
 
 resource "docker_container" "database" {
-  name  = "dbcms"
+  name  = var.containernames[1]
   image = docker_image.database.latest
   restart = var.containerestpol[2]
   networks_advanced {
@@ -34,6 +34,6 @@ resource "docker_container" "database" {
   }
   volumes {
       container_path = "/var/lib/mysql"
-      host_path = "/home/moisestapia/EMS/Terraform/terra-cert-docker/terra-wordpress/database"
+      host_path = "${path.cwd}/database"
   }
 }
