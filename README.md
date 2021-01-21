@@ -70,3 +70,11 @@ docker container ls
 
 ```
 ![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/dockercontainerls.png)
+
+## Config WordPress
+
+To configure wordpress we need follow the steps what help installer show us.
+
+- [X] create a file wp-config.php.
+- [X] add the content that the instales show us.
+- [X] restart the instalation.
