@@ -21,22 +21,42 @@ Docker version: 19.03.13, build 4484c46d9d
 ```bash
 git clone https://github.com/MoisesTapia/terra-wordpress
 cd terra-wordpress
-terraform plan
-terraform apply --auto-approve
-terraform outputs
+terraform plan -out terraform.tfplan
+terraform apply terraform.tfplan
 ```
+## Look all outputs
+
+```bash
+terraform output
+```
+## How to destroy
+
+```bash
+terraform destroy --auto-approve
+```
+
 ## Change the path of your docker volumes
 
 ```bash
+
   volumes {
       container_path = "/var/lib/mysql" --------
       host_path = "/home/moisestapia/EMS/Terraform/terra-cert-docker/terra-wordpress/database"
   }
+
 ```
 
 
-*where:*
-container_path  = The path in the container where the volume will be mounted.
-host_path =  The path on the host where the volume is coming from.
+*where:* <br>
+container_path  = The path in the container where the volume will be mounted.<br>
+host_path =  The path on the host where the volume is coming from.<br>
 
 [Look the file](https://github.com/MoisesTapia/terra-wordpress/blob/main/container.tf)
+
+## Check docker container
+
+```bash
+
+docker container ls
+
+```
