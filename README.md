@@ -24,11 +24,16 @@ cd terra-wordpress
 terraform plan -out terraform.tfplan
 terraform apply terraform.tfplan
 ```
+![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/apply.png)
+
 ## Look all outputs
 
 ```bash
 terraform output
 ```
+![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/output.png)
+![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/terraouput.png)
+
 ## How to destroy
 
 ```bash
@@ -60,3 +65,4 @@ host_path =  The path on the host where the volume is coming from.<br>
 docker container ls
 
 ```
+![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/dockercontainerls.png)
