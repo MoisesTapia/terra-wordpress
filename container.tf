@@ -2,6 +2,9 @@ resource "docker_container" "wordpress" {
     name  = "wordpress"
     restart = var.containerestpol[3]
     image = docker_image.wordpress.latest
+    networks_advanced {
+        name = docker_network.wp_net.id
+    }
     ports {
         internal = var.internal_ports[0]
         external = var.external_ports[0]
@@ -16,9 +19,12 @@ resource "docker_container" "database" {
   name  = "dbcms"
   image = docker_image.database.latest
   restart = var.containerestpol[2]
+  networks_advanced {
+      name = docker_network.wp_net.id
+  }
   env = [
-     "MYSQL_ROOT_PASSWORD=${random_password.password.result}_wpss",
-     "MYSQL_PASSWORD=wordpress",
+     "MYSQL_ROOT_PASSWORD=${random_string.password.result}_rootpswd",
+     "MYSQL_PASSWORD=${random_string.mysqlpass.result}_sqltepwd",
      "MYSQL_USER=wordpress",
      "MYSQL_DATABASE=wordpress"
   ]

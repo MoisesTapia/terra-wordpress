@@ -28,6 +28,20 @@ output "wordpress-ip-external_port-name" {
     value = [for i in docker_container.wordpress[*]: join(":", [i.ip_address],i.ports[*]["external"], [i.name])]
 }
 
+output "dbpwdroot" {
+    description = ""
+    value = "${random_string.password.result}_wpss"
+}
+
+output "dbpwdmyql" {
+    description = ""
+    value = "${random_string.mysqlpass.result}_sqltepwd"
+}
+
+output "network_info-net_name-net_id" {
+    description = "value"
+    value = [for i in docker_network.wp_net[*]: join(":", [i.name], [i.id])]
+}
 #output "container_name" {
 #    description = "The name of db container"
 #    value = docker_container.wordpress.name
