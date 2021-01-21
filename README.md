@@ -10,6 +10,10 @@
 
 ## Deploy a Wordpress with MYSQL with docker and terraform
 
+
+![](https://github.com/MoisesTapia/terra-wordpress/blob/main/images/terrawordpress.png)
+
+
 ### Info
 
 No. containers: 2 <br>
